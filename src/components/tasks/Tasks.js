@@ -1,6 +1,7 @@
 import React from "react";
 import {Task} from "../task/Task";
 
+
 const Tasks = ({ tasks, handleTaskClick, handleTaskDelete }) => {
     return(
         <>

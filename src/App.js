@@ -3,6 +3,7 @@ import "./App.css";
 import { Tasks } from "./components/tasks/Tasks";
 import {AddButton} from "./components/addButton/AddButton";
 import { v4 as uuidv4 } from "uuid";
+import { Header } from "./components/header/Header";
 
 const App = () => {
   const [tasks, setTasks] = useState([
@@ -50,6 +51,7 @@ const App = () => {
     <>
 
     <div className="container">
+      < Header />
       <AddButton handleTaskAddition={handleTaskAddition}  />
       <Tasks  tasks={tasks} handleTaskClick={handleTaskClick} handleTaskDelete={handleTaskDelete} />
     </div>
