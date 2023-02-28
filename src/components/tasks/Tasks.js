@@ -1,11 +1,11 @@
 import React from "react";
 import {Task} from "../task/Task";
 
-const Tasks = ({ tasks, handleTaskClick }) => {
+const Tasks = ({ tasks, handleTaskClick, handleTaskDelete }) => {
     return(
         <>
         {tasks.map(task => 
-        (<Task task={task} handleTaskClick={handleTaskClick} />))}
+        (<Task task={task} handleTaskClick={handleTaskClick} handleTaskDelete={handleTaskDelete} />))}
         </>
     )
 
