@@ -25,7 +25,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchTask = async () => {
-      const { data } = await axios.get('https://jsonplaceholder.cypress.io/todos?_limit=10');
+    const { data } = await axios.get('https://jsonplaceholder.cypress.io/todos?_limit=10');
 
       setTasks(data);
       
@@ -33,7 +33,7 @@ const App = () => {
 
     fetchTask();
 
-  },[]);
+    },[]);
 
   const handleTaskClick = (taskId) => {
     const newTasks = tasks.map(task => {
