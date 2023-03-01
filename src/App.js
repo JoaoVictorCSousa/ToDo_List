@@ -4,6 +4,9 @@ import { Tasks } from "./components/tasks/Tasks";
 import {AddButton} from "./components/addButton/AddButton";
 import { v4 as uuidv4 } from "uuid";
 import { Header } from "./components/header/Header";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { TaskDetails } from "./components/taskDetails/TaskDetails";
+
 
 const App = () => {
   const [tasks, setTasks] = useState([
@@ -45,20 +48,27 @@ const App = () => {
 
     setTasks(newTasks)
   };
- 
+
+  
   return ( 
 
-    <>
+    <Router>
 
     <div className="container">
-      < Header />
-      <AddButton handleTaskAddition={handleTaskAddition}  />
-      <Tasks  tasks={tasks} handleTaskClick={handleTaskClick} handleTaskDelete={handleTaskDelete} />
-    </div>
-   
 
-    
-    </>
+      
+      < Header />
+      <Route path="/" exact render={() => (
+        <>
+
+        <AddButton handleTaskAddition={handleTaskAddition}  />
+        <Tasks  tasks={tasks} handleTaskClick={handleTaskClick} handleTaskDelete={handleTaskDelete} />
+        </>
+  )} />
+    <Route path="/:taskTitle" exact component={TaskDetails} />
+
+    </div>
+   </Router>
  
   )
 }
